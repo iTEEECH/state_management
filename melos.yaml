@@ -1,0 +1,58 @@
+name: state_management
+repository:
+  type: github
+  origin: https://github.com/GauthierGabelleInteriale/ite_flutter_package_copy.git
+  owner: iTEEECH
+  name: state_management
+
+packages:
+  - apps/**
+
+command:
+  version:
+    # Generate commit links in package changelogs.
+    linkToCommits: true
+    # # Only allow versioning to happen on main branch.
+    # branch: main
+    # Additionally build a changelog at the root of the workspace.
+    workspaceChangelog: true
+
+  bootstrap:
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+  clean:
+    hooks:
+      post: |
+        melos exec -c 1 -- "flutter clean"
+
+scripts:
+  analyze:
+    description: Run `dart analyze` for all packages.
+    run: dart analyze .
+    exec:
+      concurrency: 1
+
+  generate:
+    description: Run `dart run build_runner build --delete-conflicting-outputs` for all packages.
+    run: dart run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+      failFast: true
+    packageFilters:
+      flutter: true
+      dependsOn: build_runner
+      
+  pub:get:
+    description: Run `flutter pub get` for all packages.
+    run: flutter pub get
+
+  test:unit:
+    description: Run `flutter test` for all packages.
+    run: flutter test
+    exec:
+      concurrency: 1
+      failFast: true
+    packageFilters:
+      dirExists:
+        - test
