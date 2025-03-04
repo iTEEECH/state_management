@@ -1,0 +1,7 @@
+name: state_management
+
+environment:
+  sdk: ^3.6.1
+
+dev_dependencies:
+  melos: 6.3.2
