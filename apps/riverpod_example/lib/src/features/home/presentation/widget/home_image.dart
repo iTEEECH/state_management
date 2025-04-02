@@ -7,21 +7,19 @@ class HomeImage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Provider.
+    // Provider(s).
     final AsyncValue<Country?> result = ref.watch(homeControllerProvider);
 
     // Content.
-    return SizedBox.square(
-      dimension: 240.0,
-      child: result.maybeWhen(
-        error: (_, __) => Center(
-          child: Text('Error occurred.'),
-        ),
-        loading: () => Center(
-          child: CircularProgressIndicator.adaptive(),
-        ),
-        data: (Country? country) => Image.network(country!.flag),
-        orElse: () => const SizedBox.shrink(),
+    return Center(
+      child: SizedBox.square(
+        dimension: 240.0,
+        child: switch (result) {
+          AsyncData(value: final Country? country) => Image.network(country!.flag),
+          AsyncLoading() => CircularProgressIndicator.adaptive(),
+          AsyncError(:final error) => Text('Error occurred : $error.'),
+          _ => const SizedBox.shrink(),
+        },
       ),
     );
   }
