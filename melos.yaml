@@ -1,0 +1,93 @@
+name: state_management
+repository:
+  type: github
+  origin: https://github.com/iTEEECH/state_management.git
+  owner: iTEEECH
+  name: state_management
+
+packages:
+  - apps/**
+
+command:
+  version:
+    # Generate commit links in package changelogs.
+    linkToCommits: true
+    # # Only allow versioning to happen on main branch.
+    # branch: main
+    # Additionally build a changelog at the root of the workspace.
+    workspaceChangelog: true
+
+  bootstrap:
+    runPubGetInParallel: false
+    usePubspecOverrides: true
+
+    environment:
+      sdk: ^3.6.1
+
+    dependencies:
+      # https://pub.dev/packages/analyzer
+      analyzer: 7.0.0
+      # https://pub.dev/packages/equatable
+      equatable: 2.0.7
+      # https://pub.dev/packages/flutter_bloc
+      flutter_bloc: 9.1.0
+      # https://pub.dev/packages/flutter_hooks
+      flutter_hooks: 0.21.2
+      # https://pub.dev/packages/get
+      get: 4.7.2
+      # https://pub.dev/packages/get_it
+      get_it: 8.0.3
+      # https://pub.dev/packages/hooks_riverpod
+      hooks_riverpod: 2.6.1
+      # https://pub.dev/packages/http
+      http: 1.3.0
+      # https://pub.dev/packages/provider
+      provider: 6.1.5
+      # https://pub.dev/packages/riverpod_annotation
+      riverpod_annotation: 2.6.1
+      # https://pub.dev/packages/signals
+      signals: 6.0.2
+
+    dev_dependencies:
+      # https://pub.dev/packages/build_runner
+      build_runner: 2.4.15
+      # https://pub.dev/packages/flutter_lints
+      flutter_lints: 5.0.0
+      # https://pub.dev/packages/riverpod_generator
+      riverpod_generator: 2.6.5
+
+  clean:
+    hooks:
+      post: |
+        melos exec -c 1 -- "flutter clean"
+
+scripts:
+  analyze:
+    description: Run `dart analyze` for all packages.
+    run: dart analyze .
+    exec:
+      concurrency: 1
+
+  generate:
+    description: Run `dart run build_runner build --delete-conflicting-outputs` for all packages.
+    run: dart run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+      failFast: true
+    packageFilters:
+      flutter: true
+      dependsOn: build_runner
+      
+  pub:get:
+    description: Run `flutter pub get` for all packages.
+    run: flutter pub get
+
+  test:unit:
+    description: Run `flutter test` for all packages.
+    run: flutter test
+    exec:
+      concurrency: 1
+      failFast: true
+    packageFilters:
+      dirExists:
+        - test
