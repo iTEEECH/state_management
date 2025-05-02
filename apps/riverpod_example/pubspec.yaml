@@ -1,0 +1,40 @@
+name: riverpod_example
+description: "Example of Riverpod."
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # https://pub.dev/packages/analyzer
+  analyzer: 7.0.0
+  # https://pub.dev/packages/equatable
+  equatable: 2.0.7
+  # https://pub.dev/packages/flutter_hooks
+  flutter_hooks: 0.21.2
+  # https://pub.dev/packages/hooks_riverpod
+  hooks_riverpod: 2.6.1
+  # https://pub.dev/packages/http
+  http: 1.3.0
+  # https://pub.dev/packages/riverpod_annotation
+  riverpod_annotation: 2.6.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # https://pub.dev/packages/build_runner
+  build_runner: 2.4.15
+  # https://pub.dev/packages/flutter_lints
+  flutter_lints: 5.0.0
+  # https://pub.dev/packages/riverpod_generator
+  riverpod_generator: 2.6.5
+
+# The following section is specific to Flutter packages.
+flutter:
+  uses-material-design: true
+  generate: true
