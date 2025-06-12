@@ -29,17 +29,15 @@ class _HomePageState extends State<HomePage> {
         title: Text('Provider Example'),
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            spacing: 40.0,
-            children: <Widget>[
-              HomeImage(),
-              HomeTextField(controller: _controller),
-              HomeButton(controller: _controller),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          spacing: 40.0,
+          children: <Widget>[
+            HomeImage(),
+            HomeTextField(controller: _controller),
+            HomeButton(controller: _controller),
+          ],
         ),
       ),
     );
