@@ -9,20 +9,17 @@ class HomeImage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     // Instance.
     final HomeController controller = Get.find();
+
     // Content.
-    return SizedBox.square(
-      dimension: 240.0,
-      child: controller.obx(
-        (state) {
-          return Image.network(state!.flag);
-        },
-        onLoading: Center(
-          child: CircularProgressIndicator.adaptive(),
+    return Center(
+      child: SizedBox.square(
+        dimension: 240.0,
+        child: controller.obx(
+          onError: (error) => Text('$error'),
+          onLoading: CircularProgressIndicator.adaptive(),
+          (state) => Image.network(state!.flag),
+          onEmpty: const SizedBox.shrink(),
         ),
-        onError: (_) => const Center(
-          child: Text('Error occurred.'),
-        ),
-        onEmpty: const SizedBox.shrink(),
       ),
     );
   }
