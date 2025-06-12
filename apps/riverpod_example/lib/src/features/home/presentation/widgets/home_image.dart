@@ -15,9 +15,9 @@ class HomeImage extends ConsumerWidget {
       child: SizedBox.square(
         dimension: 240.0,
         child: switch (result) {
-          AsyncData(value: final Country? country) => Image.network(country!.flag),
-          AsyncLoading() => CircularProgressIndicator.adaptive(),
           AsyncError(:final error) => Text('$error'),
+          AsyncLoading() => CircularProgressIndicator.adaptive(),
+          AsyncData(value: final Country? country) => Image.network(country!.flag),
           _ => const SizedBox.shrink(),
         },
       ),

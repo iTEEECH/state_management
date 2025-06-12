@@ -16,17 +16,15 @@ class HomePage extends HookWidget {
         title: Text('Riverpod Example'),
       ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            spacing: 40.0,
-            children: <Widget>[
-              HomeImage(),
-              HomeTextField(controller: controller),
-              HomeButton(controller: controller),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          spacing: 40.0,
+          children: <Widget>[
+            HomeImage(),
+            HomeTextField(controller: controller),
+            HomeButton(controller: controller),
+          ],
         ),
       ),
     );
