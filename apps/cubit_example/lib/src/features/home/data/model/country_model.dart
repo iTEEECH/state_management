@@ -6,35 +6,18 @@ class CountryModel extends Equatable {
   final String code;
   final String flag;
 
-  const CountryModel({
-    required this.name,
-    required this.code,
-    required this.flag,
-  });
+  const CountryModel({required this.name, required this.code, required this.flag});
 
   @override
   List<Object> get props {
-    return [
-      name,
-      code,
-      flag,
-    ];
+    return [name, code, flag];
   }
 
   Country toEntity() {
-    return Country(
-      name: name,
-      code: code,
-      flag: flag,
-    );
+    return Country(name: name, code: code, flag: flag);
   }
 
   factory CountryModel.fromMap(Map<String, dynamic> map) {
-    return CountryModel(
-      name: map['name']['official'] ?? '',
-      code: map['cca2'] ?? '',
-      flag: map['flags']['png'] ?? '',
-    );
+    return CountryModel(name: map['name']['official'] ?? '', code: map['cca2'] ?? '', flag: map['flags']['png'] ?? '');
   }
-
 }

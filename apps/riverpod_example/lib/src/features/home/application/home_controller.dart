@@ -21,9 +21,7 @@ class HomeController extends _$HomeController {
     await Future.delayed(const Duration(seconds: 2));
 
     state = await AsyncValue.guard<Country>(() async {
-      final Country country = await _repository.fetchCountry(
-        name: name ?? _kDefaultCountryName,
-      );
+      final Country country = await _repository.fetchCountry(name: name ?? _kDefaultCountryName);
       return country;
     });
 

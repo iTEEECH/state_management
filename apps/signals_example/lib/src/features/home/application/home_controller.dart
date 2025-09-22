@@ -20,9 +20,7 @@ class HomeController {
 
       await Future.delayed(const Duration(seconds: 2));
 
-      final Country country = await _homeRepository.fetchCountry(
-        name: name ?? _kDefaultCountry,
-      );
+      final Country country = await _homeRepository.fetchCountry(name: name ?? _kDefaultCountry);
 
       _country.value = AsyncData(country);
     } catch (error, stackTrace) {

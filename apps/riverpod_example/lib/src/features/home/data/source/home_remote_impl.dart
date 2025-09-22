@@ -10,7 +10,7 @@ final class HomeRemoteImpl implements HomeRemote {
   const HomeRemoteImpl();
 
   @override
-  Future<CountryModel> fetchCountry(String name) async{
+  Future<CountryModel> fetchCountry(String name) async {
     // Path.
     final Uri url = Uri.parse('$_kBaseUrl/v3.1/name/$name');
 

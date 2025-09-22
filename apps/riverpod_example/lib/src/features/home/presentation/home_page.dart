@@ -12,9 +12,7 @@ class HomePage extends HookWidget {
 
     // Content.
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Riverpod Example'),
-      ),
+      appBar: AppBar(title: Text('Riverpod Example')),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

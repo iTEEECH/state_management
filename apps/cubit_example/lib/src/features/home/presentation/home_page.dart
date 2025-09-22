@@ -25,9 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cubit Example'),
-      ),
+      appBar: AppBar(title: Text('Cubit Example')),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

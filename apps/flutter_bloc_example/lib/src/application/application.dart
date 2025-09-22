@@ -10,10 +10,7 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter BLoC Example',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple), useMaterial3: true),
       home: BlocProvider(
         create: (context) => getIt<HomeBloc>()..add(const FetchCountryEvent()),
         child: Builder(builder: (context) => const HomePage()),

@@ -6,21 +6,49 @@ part of 'home_controller.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeControllerHash() => r'347704283d725d011966b62b2ae3793909c850cf';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [HomeController].
 @ProviderFor(HomeController)
-final homeControllerProvider =
-    AutoDisposeAsyncNotifierProvider<HomeController, Country?>.internal(
-  HomeController.new,
-  name: r'homeControllerProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$homeControllerHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const homeControllerProvider = HomeControllerProvider._();
 
-typedef _$HomeController = AutoDisposeAsyncNotifier<Country?>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class HomeControllerProvider extends $AsyncNotifierProvider<HomeController, Country?> {
+  const HomeControllerProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'homeControllerProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$homeControllerHash();
+
+  @$internal
+  @override
+  HomeController create() => HomeController();
+}
+
+String _$homeControllerHash() => r'45398ded64943bad96f7a9909f12958940f0b7b1';
+
+abstract class _$HomeController extends $AsyncNotifier<Country?> {
+  FutureOr<Country?> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<AsyncValue<Country?>, Country?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<Country?>, Country?>,
+              AsyncValue<Country?>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

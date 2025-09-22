@@ -6,21 +6,41 @@ part of 'home_remote.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeRemoteHash() => r'acc1b3f9ee27948ac57076d4f1e2384bc74a5f5c';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [homeRemote].
 @ProviderFor(homeRemote)
-final homeRemoteProvider = AutoDisposeProvider<HomeRemote>.internal(
-  homeRemote,
-  name: r'homeRemoteProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$homeRemoteHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const homeRemoteProvider = HomeRemoteProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef HomeRemoteRef = AutoDisposeProviderRef<HomeRemote>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class HomeRemoteProvider extends $FunctionalProvider<HomeRemote, HomeRemote, HomeRemote>
+    with $Provider<HomeRemote> {
+  const HomeRemoteProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'homeRemoteProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$homeRemoteHash();
+
+  @$internal
+  @override
+  $ProviderElement<HomeRemote> $createElement($ProviderPointer pointer) => $ProviderElement(pointer);
+
+  @override
+  HomeRemote create(Ref ref) {
+    return homeRemote(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(HomeRemote value) {
+    return $ProviderOverride(origin: this, providerOverride: $SyncValueProvider<HomeRemote>(value));
+  }
+}
+
+String _$homeRemoteHash() => r'7f3410e8e8710578511b621b5fd9fcb3e920628b';

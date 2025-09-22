@@ -6,22 +6,41 @@ part of 'home_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homeRepositoryHash() => r'67af4118549bb9d42fcf2b10826b1d6e983326c5';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [homeRepository].
 @ProviderFor(homeRepository)
-final homeRepositoryProvider = AutoDisposeProvider<HomeRepository>.internal(
-  homeRepository,
-  name: r'homeRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$homeRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const homeRepositoryProvider = HomeRepositoryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef HomeRepositoryRef = AutoDisposeProviderRef<HomeRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class HomeRepositoryProvider extends $FunctionalProvider<HomeRepository, HomeRepository, HomeRepository>
+    with $Provider<HomeRepository> {
+  const HomeRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'homeRepositoryProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$homeRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<HomeRepository> $createElement($ProviderPointer pointer) => $ProviderElement(pointer);
+
+  @override
+  HomeRepository create(Ref ref) {
+    return homeRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(HomeRepository value) {
+    return $ProviderOverride(origin: this, providerOverride: $SyncValueProvider<HomeRepository>(value));
+  }
+}
+
+String _$homeRepositoryHash() => r'9ccf019d99275477c6cb14dc33861b5d4890f272';

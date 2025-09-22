@@ -6,8 +6,7 @@ class HomeController extends GetxController with StateMixin<Country> {
 
   static const _kDefaultCountryName = 'France';
 
-  HomeController({required HomeRepository repository})
-      : _repository = repository;
+  HomeController({required HomeRepository repository}) : _repository = repository;
 
   @override
   void onInit() {
@@ -21,9 +20,7 @@ class HomeController extends GetxController with StateMixin<Country> {
 
       await Future.delayed(const Duration(seconds: 2));
 
-      final Country country = await _repository.fetchCountry(
-        name: name ?? _kDefaultCountryName,
-      );
+      final Country country = await _repository.fetchCountry(name: name ?? _kDefaultCountryName);
 
       change(country, status: RxStatus.success());
     } catch (error) {

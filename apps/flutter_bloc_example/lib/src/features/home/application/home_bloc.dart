@@ -12,19 +12,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<FetchCountryEvent>(_fetchCountry);
   }
 
-  Future<void> _fetchCountry(
-    FetchCountryEvent event,
-    Emitter<HomeState> emit,
-  ) async {
-
+  Future<void> _fetchCountry(FetchCountryEvent event, Emitter<HomeState> emit) async {
     try {
       emit(HomeLoading());
 
       await Future.delayed(const Duration(seconds: 2));
 
-      final Country country = await _homeRepository.fetchCountry(
-        name: event.name ?? _kDefaultCountry,
-      );
+      final Country country = await _homeRepository.fetchCountry(name: event.name ?? _kDefaultCountry);
 
       if (!isClosed) {
         emit(HomeSuccess(country));

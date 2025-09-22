@@ -9,8 +9,7 @@ class HomeImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Watcher.
-    final AsyncState<Country> state =
-        getIt<HomeController>().country.watch(context);
+    final AsyncState<Country> state = getIt<HomeController>().country.watch(context);
 
     // Content.
     return Center(

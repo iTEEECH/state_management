@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:get_example/src/features/home/home.dart';
 
-
 class HomeBinding extends Bindings {
   @override
   void dependencies() {

@@ -6,7 +6,7 @@ final class HomeRepositoryImpl implements HomeRepository {
   const HomeRepositoryImpl({required HomeRemote remote}) : _remote = remote;
 
   @override
-  Future<Country> fetchCountry({required String name}) async{
+  Future<Country> fetchCountry({required String name}) async {
     final CountryModel result = await _remote.fetchCountry(name);
     return result.toEntity();
   }

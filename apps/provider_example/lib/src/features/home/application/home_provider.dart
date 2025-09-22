@@ -21,9 +21,7 @@ class HomeProvider with ChangeNotifier {
 
       await Future.delayed(const Duration(seconds: 2));
 
-      final Country country = await _homeRepository.fetchCountry(
-        name: name ?? _kDefaultCountry,
-      );
+      final Country country = await _homeRepository.fetchCountry(name: name ?? _kDefaultCountry);
 
       _state = HomeSuccess(country);
     } catch (error) {
